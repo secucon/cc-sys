@@ -1,0 +1,8 @@
+{
+  "name": "comply-cc",
+  "version": "1.0.0",
+  "description": "Production-ready agents, skills, hooks, commands, and rules for Claude Code",
+  "author": {
+    "name": "secucon"
+  }
+}

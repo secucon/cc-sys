@@ -1,0 +1,14 @@
+{
+  "name": "comply-cc-marketplace",
+  "owner": {
+    "name": "secucon"
+  },
+  "plugins": [
+    {
+      "name": "comply-cc",
+      "source": ".",
+      "description": "Production-ready agents, skills, hooks, commands, and rules for Claude Code",
+      "version": "1.0.0"
+    }
+  ]
+}
