@@ -1,13 +1,12 @@
 {
-  "name": "everything-claude-code",
+  "name": "cc-sys",
   "version": "1.0.0",
-  "description": "Complete collection of battle-tested Claude Code configs from an Anthropic hackathon winner - agents, skills, hooks, commands, and rules evolved over 10+ months of intensive daily use",
+  "description": "Production-ready Claude Code configurations - agents, skills, hooks, commands, and rules",
   "author": {
-    "name": "Affaan Mustafa",
-    "url": "https://x.com/affaanmustafa"
+    "name": "secucon"
   },
-  "homepage": "https://github.com/affaan-m/everything-claude-code",
-  "repository": "https://github.com/affaan-m/everything-claude-code",
+  "homepage": "https://github.com/secucon/cc-sys",
+  "repository": "https://github.com/secucon/cc-sys",
   "license": "MIT",
   "keywords": [
     "claude-code",
