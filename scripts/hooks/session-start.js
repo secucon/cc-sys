@@ -9,6 +9,7 @@
  */
 
 const path = require('path');
+const { execSync } = require('child_process');
 const {
   getSessionsDir,
   getLearnedSkillsDir,
@@ -19,6 +20,24 @@ const {
 const { getPackageManager, getSelectionPrompt } = require('../lib/package-manager');
 
 async function main() {
+  // Auto-update plugin from remote (if git repo)
+  const pluginRoot = process.env.CLAUDE_PLUGIN_ROOT || path.resolve(__dirname, '../..');
+  try {
+    // Check if .git directory exists
+    const gitDir = path.join(pluginRoot, '.git');
+    const fs = require('fs');
+    if (fs.existsSync(gitDir)) {
+      execSync('git pull --quiet', {
+        cwd: pluginRoot,
+        timeout: 5000,
+        stdio: ['pipe', 'pipe', 'pipe']
+      });
+      log('[SessionStart] Plugin auto-updated from remote');
+    }
+  } catch (e) {
+    // Silently ignore errors (offline, no remote, etc.)
+  }
+
   const sessionsDir = getSessionsDir();
   const learnedDir = getLearnedSkillsDir();
 
