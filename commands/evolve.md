@@ -1,13 +1,20 @@
 ---
 name: evolve
 description: Cluster related instincts into skills, commands, or agents
-command: /evolve
-implementation: python3 ~/.claude/skills/continuous-learning-v2/scripts/instinct-cli.py evolve
+command: true
 ---
 
 # Evolve Command
 
 ## Implementation
+
+Run the instinct CLI using the plugin root path:
+
+```bash
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/continuous-learning-v2/scripts/instinct-cli.py" evolve [--generate]
+```
+
+Or if `CLAUDE_PLUGIN_ROOT` is not set (manual installation):
 
 ```bash
 python3 ~/.claude/skills/continuous-learning-v2/scripts/instinct-cli.py evolve [--generate]
@@ -40,7 +47,7 @@ Example:
 - `new-table-step2`: "when adding a database table, update schema"
 - `new-table-step3`: "when adding a database table, regenerate types"
 
-→ Creates: `/new-table` command
+→ Creates: **new-table** command
 
 ### → Skill (Auto-Triggered)
 When instincts describe behaviors that should happen automatically:
@@ -67,7 +74,7 @@ Example:
 - `debug-step3`: "when debugging, create minimal reproduction"
 - `debug-step4`: "when debugging, verify fix with test"
 
-→ Creates: `debugger` agent
+→ Creates: **debugger** agent
 
 ## What to Do
 
